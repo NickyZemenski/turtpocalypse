@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://cyfya1d4v7bxh" path="res://assets/character.png" id="1_drhme"]
 [ext_resource type="Script" uid="uid://chy0j0g5fo2nc" path="res://scripts/test.gd" id="1_guiot"]
 [ext_resource type="PackedScene" uid="uid://cxosrh6s16pbv" path="res://scene/Enemy.tscn" id="3_3cebx"]
-[ext_resource type="Script" path="res://scene/enemy.gd" id="4_tytcy"]
+[ext_resource type="Script" uid="uid://byuk0at003lek" path="res://scripts/enemy.gd" id="4_tytcy"]
 
 [node name="Node2D" type="Node2D" unique_id=1626918892]
 script = ExtResource("1_guiot")
