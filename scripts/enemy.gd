@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var hero =$"../Character"
+@onready var hero =$"../Player"
 
 var speed :float = 1
 # Called when the node enters the scene tree for the first time.
