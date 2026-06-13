@@ -12,8 +12,10 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	_MoveTowards(hero, delta)
 
-
 func _MoveTowards(target,delta)->void:
-	if (self.position != target.position):
-		self.position = self.position.lerp(target.position, speed* delta)
+	if (position != target.position):
+		position = position.lerp(target.position, speed* delta)
+#func _MoveTowards(target,delta)->void:
+	#if (position != target.position):
+	#	position = position.lerp(target.position, speed* delta)
 	
