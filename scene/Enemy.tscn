@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://cxosrh6s16pbv"]
+
+[ext_resource type="Texture2D" uid="uid://duoe8tyklhvnc" path="res://icon.svg" id="1_uramm"]
+
+[node name="Enemy" type="Node2D" unique_id=2049294418]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=308824025]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_uramm")
