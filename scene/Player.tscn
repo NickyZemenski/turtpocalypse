@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://cqdolshtolq40"]
 
 [ext_resource type="Script" uid="uid://x6ia8h670nsp" path="res://scripts/playerMovement.gd" id="1_62i1b"]
-[ext_resource type="Texture2D" uid="uid://duoe8tyklhvnc" path="res://icon.svg" id="2_y30ri"]
+[ext_resource type="Texture2D" uid="uid://c1p5wgci5nmuh" path="res://assets/enemy_slime.png" id="2_62i1b"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3x35j"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_y30ri")
+"texture": ExtResource("2_62i1b")
 }],
 "loop": true,
 "name": &"Idle",
@@ -21,6 +21,7 @@ size = Vector2(130, 128)
 script = ExtResource("1_62i1b")
 
 [node name="mainCharacter" type="AnimatedSprite2D" parent="." unique_id=886010852]
+scale = Vector2(0.25, 0.25)
 sprite_frames = SubResource("SpriteFrames_3x35j")
 animation = &"Idle"
 

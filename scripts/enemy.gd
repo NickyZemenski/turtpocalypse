@@ -2,7 +2,9 @@ extends Node2D
 
 @onready var hero =$"../Player"
 
-var speed :float = 1
+var speed :float = 150
+
+var launchSpeed :float = 415
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -14,8 +16,17 @@ func _process(delta: float) -> void:
 
 func _MoveTowards(target,delta)->void:
 	if (position != target.position):
+		var direction: Vector2 = global_position.direction_to(target.global_position)
+		global_position += direction * speed * delta
+		
+		
+		
+		
+func _MoveTowardsTwo(target,delta)->void:
+	if (position != target.position):
 		position = position.lerp(target.position, speed* delta)
-#func _MoveTowards(target,delta)->void:
+		
+func _MoveTowardsThree(target,delta)->void:
 	#if (position != target.position):
-	#	position = position.lerp(target.position, speed* delta)
+	pass
 	
