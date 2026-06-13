@@ -7,8 +7,8 @@
 [node name="MainGame" type="Node2D" unique_id=1867307061]
 script = ExtResource("1_6fdoo")
 
-[node name="Player" parent="." unique_id=46295907 instance=ExtResource("1_ud66n")]
-position = Vector2(223, 210)
-
 [node name="Enemy" parent="." unique_id=447794542 instance=ExtResource("3_ud66n")]
-position = Vector2(644, 215)
+position = Vector2(251, 21)
+
+[node name="Player" parent="." unique_id=46295907 instance=ExtResource("1_ud66n")]
+position = Vector2(-132, -19)

@@ -1,4 +1,4 @@
-extends Node2D
+extends CharacterBody2D
 
 @onready var hero =$"../Player"
 
@@ -30,3 +30,10 @@ func _MoveTowardsThree(target,delta)->void:
 	#if (position != target.position):
 	pass
 	
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	hero.HP -= 1
+	print(hero.HP)
+	if hero.HP <= 0:
+		print("You died!")

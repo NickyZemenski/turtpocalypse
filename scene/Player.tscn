@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cqdolshtolq40"]
 
-[ext_resource type="Script" uid="uid://x6ia8h670nsp" path="res://scripts/playerMovement.gd" id="1_62i1b"]
+[ext_resource type="Script" uid="uid://x6ia8h670nsp" path="res://scripts/Player.gd" id="1_62i1b"]
 [ext_resource type="Texture2D" uid="uid://c1p5wgci5nmuh" path="res://assets/enemy_slime.png" id="2_62i1b"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3x35j"]
@@ -15,7 +15,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k8rrn"]
-size = Vector2(130, 128)
+size = Vector2(94, 50)
 
 [node name="Player" type="CharacterBody2D" unique_id=46295907]
 script = ExtResource("1_62i1b")
@@ -26,5 +26,5 @@ sprite_frames = SubResource("SpriteFrames_3x35j")
 animation = &"Idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=257537205]
-position = Vector2(0, -1)
+position = Vector2(7, 0)
 shape = SubResource("RectangleShape2D_k8rrn")
