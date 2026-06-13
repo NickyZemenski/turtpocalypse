@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://cxosrh6s16pbv"]
+
+[ext_resource type="Texture2D" uid="uid://cyfya1d4v7bxh" path="res://assets/character.png" id="1_h08p8"]
+
+[node name="Enemy" type="Node2D" unique_id=1089627467]
+
+[node name="Character" type="Sprite2D" parent="." unique_id=412031805]
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("1_h08p8")
