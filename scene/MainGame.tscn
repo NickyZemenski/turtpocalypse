@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://chy0j0g5fo2nc" path="res://scripts/test.gd" id="1_6fdoo"]
 [ext_resource type="PackedScene" uid="uid://cqdolshtolq40" path="res://scene/Player.tscn" id="1_ud66n"]
 [ext_resource type="PackedScene" uid="uid://cxosrh6s16pbv" path="res://scene/Enemy.tscn" id="3_ud66n"]
+[ext_resource type="Texture2D" uid="uid://dwvwvkitn8w43" path="res://assets/hud/health_full.png" id="4_6fdoo"]
 
 [node name="MainGame" type="Node2D" unique_id=1867307061]
 script = ExtResource("1_6fdoo")
@@ -18,10 +19,38 @@ wait_time = 5.0
 one_shot = true
 autostart = true
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=172256509]
+[node name="HUD" type="CanvasLayer" parent="." unique_id=172256509]
 
-[node name="TimerLabel" type="Label" parent="CanvasLayer" unique_id=655073335]
+[node name="VBoxContainer" type="VBoxContainer" parent="HUD" unique_id=90707771]
 offset_right = 40.0
-offset_bottom = 23.0
+offset_bottom = 58.0
+
+[node name="TimerLabel" type="Label" parent="HUD/VBoxContainer" unique_id=655073335]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HUD/VBoxContainer" unique_id=1198234021]
+layout_mode = 2
+
+[node name="HeartRect1" type="TextureRect" parent="HUD/VBoxContainer/HBoxContainer" unique_id=1447052541]
+layout_mode = 2
+texture = ExtResource("4_6fdoo")
+
+[node name="HeartRect2" type="TextureRect" parent="HUD/VBoxContainer/HBoxContainer" unique_id=1377705158]
+layout_mode = 2
+texture = ExtResource("4_6fdoo")
+
+[node name="HeartRect3" type="TextureRect" parent="HUD/VBoxContainer/HBoxContainer" unique_id=669217401]
+layout_mode = 2
+texture = ExtResource("4_6fdoo")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="HUD/VBoxContainer" unique_id=20185996]
+layout_mode = 2
+
+[node name="XPBar" type="ProgressBar" parent="HUD/VBoxContainer/HBoxContainer2" unique_id=1865885677]
+layout_mode = 2
+
+[node name="XPLabel" type="Label" parent="HUD/VBoxContainer/HBoxContainer2" unique_id=1257739524]
+layout_mode = 2
+text = "XP"
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

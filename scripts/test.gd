@@ -2,7 +2,7 @@ extends Node2D
 
 @onready var character = $Player
 @onready var timer = $Timer
-@onready var timer_label = $CanvasLayer/TimerLabel
+@onready var timer_label = $HUD/VBoxContainer/TimerLabel
 
 var time_left := 5.0
 
