@@ -13,3 +13,7 @@ func _process(delta: float) -> void:
 
 func _on_retry_pressed() -> void:
 	get_tree().change_scene_to_file("res://scene/MainGame.tscn")
+
+
+func _on_quit_to_menu_pressed() -> void:
+	get_tree().change_scene_to_file("res://scene/MainMenu.tscn")

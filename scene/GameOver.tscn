@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://c3k51l3gtm86u" path="res://assets/game_over/retry_button_placeholder.JPG" id="1_0mfy4"]
 [ext_resource type="Script" uid="uid://bjg2f35s1xvxd" path="res://scripts/gameOver.gd" id="1_tbok3"]
+[ext_resource type="Texture2D" uid="uid://chrbasm1sb4ek" path="res://assets/game_over/gameover_back_to_menu_button_placeholder.jpg" id="3_vq0q6"]
 
 [node name="GameOver" type="Control" unique_id=485811345]
 layout_mode = 3
@@ -31,4 +32,9 @@ text = "Game Over"
 layout_mode = 2
 icon = ExtResource("1_0mfy4")
 
+[node name="QuitToMenu" type="Button" parent="CenterContainer/VBoxContainer" unique_id=343255266]
+layout_mode = 2
+icon = ExtResource("3_vq0q6")
+
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Retry" to="." method="_on_retry_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/QuitToMenu" to="." method="_on_quit_to_menu_pressed"]
