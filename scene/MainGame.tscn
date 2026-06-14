@@ -47,10 +47,12 @@ texture = ExtResource("4_6fdoo")
 layout_mode = 2
 
 [node name="XPBar" type="ProgressBar" parent="HUD/VBoxContainer/HBoxContainer2" unique_id=1865885677]
+custom_minimum_size = Vector2(150, 20)
 layout_mode = 2
+value = 50.0
+show_percentage = false
 
 [node name="XPLabel" type="Label" parent="HUD/VBoxContainer/HBoxContainer2" unique_id=1257739524]
 layout_mode = 2
-text = "XP"
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
