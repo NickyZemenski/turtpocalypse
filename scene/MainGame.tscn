@@ -12,3 +12,16 @@ position = Vector2(223, 210)
 
 [node name="Enemy" parent="." unique_id=447794542 instance=ExtResource("3_ud66n")]
 position = Vector2(644, 215)
+
+[node name="Timer" type="Timer" parent="." unique_id=439100112]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=172256509]
+
+[node name="TimerLabel" type="Label" parent="CanvasLayer" unique_id=655073335]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

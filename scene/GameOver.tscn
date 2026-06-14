@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://n8rxhlf56fv0"]
+
+[ext_resource type="Texture2D" uid="uid://c3k51l3gtm86u" path="res://assets/game_over/retry_button_placeholder.JPG" id="1_0mfy4"]
+[ext_resource type="Script" uid="uid://bjg2f35s1xvxd" path="res://scripts/gameOver.gd" id="1_tbok3"]
+[ext_resource type="Texture2D" uid="uid://chrbasm1sb4ek" path="res://assets/game_over/gameover_back_to_menu_button_placeholder.jpg" id="3_vq0q6"]
+
+[node name="GameOver" type="Control" unique_id=485811345]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tbok3")
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=134486631]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=819820691]
+layout_mode = 2
+
+[node name="Game Over" type="Label" parent="CenterContainer/VBoxContainer" unique_id=403801257]
+layout_mode = 2
+text = "Game Over"
+
+[node name="Retry" type="Button" parent="CenterContainer/VBoxContainer" unique_id=853265520]
+layout_mode = 2
+icon = ExtResource("1_0mfy4")
+
+[node name="QuitToMenu" type="Button" parent="CenterContainer/VBoxContainer" unique_id=343255266]
+layout_mode = 2
+icon = ExtResource("3_vq0q6")
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Retry" to="." method="_on_retry_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/QuitToMenu" to="." method="_on_quit_to_menu_pressed"]

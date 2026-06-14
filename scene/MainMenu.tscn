@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://h2hhyqlubsxb"]
+
+[ext_resource type="Script" uid="uid://cn6uri7fxns1q" path="res://scripts/mainMenu.gd" id="1_lnxie"]
+[ext_resource type="Texture2D" uid="uid://c8ri0xop6lkdn" path="res://assets/main_menu/mainmenu_bg_placeholder.png" id="2_sks6p"]
+[ext_resource type="Texture2D" uid="uid://br6j3gra8vdt" path="res://assets/main_menu/mainmenu_start_placeholder.png" id="3_sks6p"]
+[ext_resource type="Texture2D" uid="uid://38h8ah13ch2x" path="res://assets/main_menu/mainmenu_options_placeholder.png" id="4_tf3dk"]
+[ext_resource type="Texture2D" uid="uid://b1ff2xlr6p2xw" path="res://assets/main_menu/mainmenu_exit_placeholder.png" id="5_rvc10"]
+
+[node name="MainMenu" type="Control" unique_id=1606310153]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lnxie")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=2034762851]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_sks6p")
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1887707173]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer" unique_id=537839206]
+layout_mode = 2
+theme_override_constants/margin_top = 300
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/MarginContainer" unique_id=1747917010]
+layout_mode = 2
+
+[node name="StartGame" type="Button" parent="CenterContainer/MarginContainer/VBoxContainer" unique_id=1166723649]
+layout_mode = 2
+icon = ExtResource("3_sks6p")
+
+[node name="Options" type="Button" parent="CenterContainer/MarginContainer/VBoxContainer" unique_id=675579573]
+layout_mode = 2
+icon = ExtResource("4_tf3dk")
+
+[node name="QuitGame" type="Button" parent="CenterContainer/MarginContainer/VBoxContainer" unique_id=1003448545]
+layout_mode = 2
+icon = ExtResource("5_rvc10")
+
+[connection signal="pressed" from="CenterContainer/MarginContainer/VBoxContainer/StartGame" to="." method="_on_start_game_pressed"]
+[connection signal="pressed" from="CenterContainer/MarginContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="CenterContainer/MarginContainer/VBoxContainer/QuitGame" to="." method="_on_quit_game_pressed"]
