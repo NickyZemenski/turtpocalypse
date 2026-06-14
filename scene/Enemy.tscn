@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://cxosrh6s16pbv"]
+[gd_scene format=3 uid="uid://cp03stb5yawnt"]
 
 [ext_resource type="Texture2D" uid="uid://cyfya1d4v7bxh" path="res://assets/character.png" id="1_h08p8"]
 [ext_resource type="Script" uid="uid://byuk0at003lek" path="res://scripts/enemy.gd" id="3_xtkpt"]
@@ -15,3 +15,10 @@ texture = ExtResource("1_h08p8")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=747395531]
 scale = Vector2(2.6800003, 7.1599994)
 shape = SubResource("CircleShape2D_uramm")
+
+[node name="jumpTimer" type="Timer" parent="." unique_id=1126169571]
+wait_time = 3.0
+autostart = true
+
+[connection signal="ready" from="jumpTimer" to="." method="_on_jump_timer_ready"]
+[connection signal="timeout" from="jumpTimer" to="." method="_on_jump_timer_timeout"]
