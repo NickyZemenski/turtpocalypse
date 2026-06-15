@@ -65,9 +65,9 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	
 	get_tree().call_group("enemies", "applyKnockback", hero.global_position)
 	
-	hero.HP -= 1
-	print(hero.HP)
+	hero.hp -= 1
+	print(hero.hp)
 	
 	
-	if hero.HP <= 0:
+	if hero.hp <= 0:
 		print("You died!")
