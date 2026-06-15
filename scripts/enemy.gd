@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-@onready var hero =$"../Player"
+@onready var player =$"../Player"
 
 var speed :float = 150
 var isMoving = true
@@ -35,7 +35,7 @@ func _physics_process(delta):
 		return
 		
 	if isMoving:
-		var direction = global_position.direction_to(hero.global_position)
+		var direction = global_position.direction_to(player.global_position)
 		global_position += direction * speed * delta
 
 func applyKnockback(from_position: Vector2):
@@ -45,7 +45,7 @@ func applyKnockback(from_position: Vector2):
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta: float) -> void:
 	#if isMoving:
-		#_MoveTowards(hero, delta)
+		#_MoveTowards(player, delta)
 
 #func _MoveTowards(target,delta)->void:
 	#if (position != target.position):
@@ -63,11 +63,7 @@ func applyKnockback(from_position: Vector2):
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	
-	get_tree().call_group("enemies", "applyKnockback", hero.global_position)
+	get_tree().call_group("enemies", "applyKnockback", player.global_position)
 	
-	hero.hp -= 1
-	print(hero.hp)
-	
-	
-	if hero.hp <= 0:
-		print("You died!")
+	if body.has_method("take_dmg"):
+		body.take_dmg(1)

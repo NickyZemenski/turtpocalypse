@@ -1,5 +1,8 @@
 extends CharacterBody2D
 
+signal health_changed(current_hp)
+signal died
+
 const SPEED = 300.0
 var hp = 3
 
@@ -18,3 +21,12 @@ func _physics_process(delta: float) -> void:
 		velocity.y = move_toward(velocity.y, 0, SPEED)
 
 	move_and_slide()
+
+func take_dmg(amount: int) -> void:
+	hp -= amount
+	print("Dmg taken")
+	
+	health_changed.emit(hp)
+	
+	if hp <= 0:
+		died.emit()
