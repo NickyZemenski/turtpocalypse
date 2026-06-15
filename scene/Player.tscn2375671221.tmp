@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://cqdolshtolq40"]
 
-[ext_resource type="Script" uid="uid://x6ia8h670nsp" path="res://scripts/player.gd" id="1_62i1b"]
+[ext_resource type="Script" uid="uid://x6ia8h670nsp" path="res://scripts/playerMovement.gd" id="1_62i1b"]
 [ext_resource type="Texture2D" uid="uid://c1p5wgci5nmuh" path="res://assets/enemy_slime.png" id="2_62i1b"]
 [ext_resource type="Script" uid="uid://md5fy6hv34i8" path="res://scripts/gunPivot.gd" id="3_waelg"]
-[ext_resource type="PackedScene" uid="uid://da5a0fycoley1" path="res://scene/Gun.tscn" id="3_y30ri"]
+[ext_resource type="PackedScene" uid="uid://da5a0fycoley1" path="res://scene/gun.tscn" id="3_y30ri"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3x35j"]
 animations = [{
@@ -23,11 +23,12 @@ size = Vector2(98, 64)
 script = ExtResource("1_62i1b")
 
 [node name="mainCharacter" type="AnimatedSprite2D" parent="." unique_id=886010852]
-scale = Vector2(-0.2, 0.2)
+scale = Vector2(0.25, 0.25)
 sprite_frames = SubResource("SpriteFrames_3x35j")
 animation = &"Idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=257537205]
+position = Vector2(3, 8)
 shape = SubResource("RectangleShape2D_k8rrn")
 
 [node name="gunPivot" type="Node2D" parent="." unique_id=459857199]

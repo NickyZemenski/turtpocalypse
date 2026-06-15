@@ -1,6 +1,11 @@
 extends CharacterBody2D
 
+@onready var player = $mainCharacter
+
 const SPEED = 300.0
+
+func _ready() -> void:
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 
 func _physics_process(delta: float) -> void:
 	# Get the input direction and handle the movement/deceleration.
@@ -17,3 +22,8 @@ func _physics_process(delta: float) -> void:
 		velocity.y = move_toward(velocity.y, 0, SPEED)
 
 	move_and_slide()
+	
+	#player sprite turning
+	var mousePos = get_global_mouse_position()
+	
+	player.flip_h = mousePos.x < global_position.x
