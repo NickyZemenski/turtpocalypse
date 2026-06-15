@@ -8,9 +8,9 @@ var isMoving = true
 var moveDelay = 0.0
 
 #add knockback variables
-var knockbackDir := Vector2.ZERO
-var knockbackTime := 0.0
-var knockbackSpeed := 400.0
+var knockbackDir = Vector2.ZERO
+var knockbackTime = 0.0
+var knockbackSpeed = 400.0
 
 
 var launchSpeed :float = 415
@@ -40,7 +40,7 @@ func _physics_process(delta):
 
 func applyKnockback(from_position: Vector2):
 	knockbackDir = (global_position - from_position).normalized()
-	knockbackTime = 0.25	
+	knockbackTime = 0.25    
 	isMoving = false
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta: float) -> void:
@@ -65,9 +65,9 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	
 	get_tree().call_group("enemies", "applyKnockback", hero.global_position)
 	
-	hero.hp -= 1
-	print(hero.hp)
+	hero.HP -= 1
+	print(hero.HP)
 	
 	
-	if hero.hp <= 0:
+	if hero.HP <= 0:
 		print("You died!")
