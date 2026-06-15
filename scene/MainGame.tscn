@@ -9,10 +9,12 @@
 script = ExtResource("1_6fdoo")
 
 [node name="Player" parent="." unique_id=46295907 instance=ExtResource("1_ud66n")]
-position = Vector2(223, 210)
+position = Vector2(-132, -19)
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=107941109]
 
 [node name="Enemy" parent="." unique_id=447794542 instance=ExtResource("3_ud66n")]
-position = Vector2(644, 215)
+position = Vector2(251, 21)
 
 [node name="Timer" type="Timer" parent="." unique_id=439100112]
 wait_time = 30.0
@@ -56,3 +58,9 @@ show_percentage = false
 layout_mode = 2
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+
+[node name="Enemy2" parent="." unique_id=117482738 instance=ExtResource("3_ud66n")]
+position = Vector2(216, 227)
+
+[node name="Enemy3" parent="." unique_id=350881155 instance=ExtResource("3_ud66n")]
+position = Vector2(367, -135)

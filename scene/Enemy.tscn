@@ -12,13 +12,10 @@ script = ExtResource("3_xtkpt")
 scale = Vector2(0.15, 0.15)
 texture = ExtResource("1_h08p8")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=747395531]
+[node name="Area2D" type="Area2D" parent="." unique_id=1060563007]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=747395531]
 scale = Vector2(2.6800003, 7.1599994)
 shape = SubResource("CircleShape2D_uramm")
 
-[node name="jumpTimer" type="Timer" parent="." unique_id=1126169571]
-wait_time = 3.0
-autostart = true
-
-[connection signal="ready" from="jumpTimer" to="." method="_on_jump_timer_ready"]
-[connection signal="timeout" from="jumpTimer" to="." method="_on_jump_timer_timeout"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

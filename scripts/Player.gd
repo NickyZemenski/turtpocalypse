@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 const SPEED = 300.0
+var hp = 3
 
 func _physics_process(delta: float) -> void:
 	# Get the input direction and handle the movement/deceleration.
