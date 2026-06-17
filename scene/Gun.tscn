@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://d3ea6276xk2qe" path="res://scripts/gun.gd" id="1_ju8ls"]
 [ext_resource type="Texture2D" uid="uid://covx7bqtpc0qh" path="res://assets/placeholder_gun.png" id="2_cpxhr"]
+[ext_resource type="PackedScene" uid="uid://di43iyfngdsyy" path="res://scene/bullet.tscn" id="2_jog2n"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_h5mb1"]
 animations = [{
@@ -16,7 +17,11 @@ animations = [{
 
 [node name="Gun" type="CharacterBody2D" unique_id=1988421000]
 script = ExtResource("1_ju8ls")
+bullet_scene = ExtResource("2_jog2n")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1298252100]
 sprite_frames = SubResource("SpriteFrames_h5mb1")
 animation = &"idle"
+
+[node name="Muzzle" type="Marker2D" parent="." unique_id=2085593819]
+position = Vector2(-16, -8)
