@@ -25,9 +25,6 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	# Move player to mouse on click
-	if Input.is_action_just_pressed("leftClick"):
-		player.position = get_viewport().get_mouse_position()
 	# Update timer label
 	var time_left = timer.time_left
 

@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://di43iyfngdsyy"]
+
+[ext_resource type="Texture2D" uid="uid://b05c6lrhsfjdu" path="res://assets/pew.png" id="1_qwydi"]
+[ext_resource type="Script" uid="uid://h1kx5s7chrta" path="res://scripts/bullet.gd" id="1_xw300"]
+
+[node name="Bullet" type="Area2D" unique_id=773534918]
+position = Vector2(574, 329)
+script = ExtResource("1_xw300")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1058099466]
+texture = ExtResource("1_qwydi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=916806988]
