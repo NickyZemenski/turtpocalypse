@@ -18,7 +18,7 @@ position = Vector2(-132, -19)
 position = Vector2(251, 21)
 
 [node name="Timer" type="Timer" parent="." unique_id=439100112]
-wait_time = 30.0
+wait_time = 60.0
 one_shot = true
 autostart = true
 

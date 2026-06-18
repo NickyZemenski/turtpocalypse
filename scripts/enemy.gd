@@ -22,7 +22,7 @@ func _ready() -> void:
 	add_to_group("enemies")
 	
 	# visual jitter to visually differentiate when clumped together
-	sprite.position += Vector2(randf_range(-4, 4), randf_range(-4, 4))
+	sprite.position += Vector2(randf_range(-8, 8), randf_range(-8, 8))
 	z_index = randi() % 3
 
 func _physics_process(delta):
