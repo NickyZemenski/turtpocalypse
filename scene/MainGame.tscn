@@ -64,4 +64,7 @@ position = Vector2(216, 227)
 [node name="Enemy3" parent="." unique_id=350881155 instance=ExtResource("3_ud66n")]
 position = Vector2(367, -135)
 
+[node name="Crosshair" parent="." unique_id=2072232929 instance=ExtResource("5_2gnev")]
+position = Vector2(-25, -26)
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
