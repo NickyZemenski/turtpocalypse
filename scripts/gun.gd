@@ -4,6 +4,8 @@ extends Node2D
 @onready var muzzle = $Muzzle
 @onready var gun: AnimatedSprite2D = $AnimatedSprite2D
 
+var fireRate = 0.2
+var shootTimer = 0.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -16,8 +18,11 @@ func _process(delta: float) -> void:
 	
 	gun.flip_v = mousePos.x < get_parent().global_position.x
 	
-	if Input.is_action_just_pressed("shoot"):
+	shootTimer -= delta
+	
+	if Input.is_action_pressed("shoot") and shootTimer <= 0:
 		shoot()
+		shootTimer = fireRate
 
 func shoot():
 	var bullet = bullet_scene.instantiate()
