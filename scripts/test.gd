@@ -1,8 +1,11 @@
 extends Node2D
 
+@onready var crosshair_scene = preload("res://scene/Crosshair.tscn")
+
 @onready var player = $Player
 @onready var timer = $Timer
 @onready var timer_label = $HUD/VBoxContainer/TimerLabel
+@onready var crosshair
 
 var time_left := 5.0
 
@@ -18,9 +21,17 @@ var heart_empty = preload("res://assets/hud/health_empty.png")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	# Handle hp
 	player.died.connect(_on_player_died)
 	player.health_changed.connect(update_hearts)
 	update_hearts(player.hp)
+	
+	# Mouse crosshair
+	Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED_HIDDEN)
+	crosshair = crosshair_scene.instantiate()
+	$HUD.add_child(crosshair)
+	
+	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -33,6 +44,9 @@ func _process(delta: float) -> void:
 	var seconds = total_seconds % 60
 
 	timer_label.text = "%02d:%02d" % [minutes, seconds]
+	
+	# Crosshair movement
+	crosshair.position = get_viewport().get_mouse_position()
 
 
 func _on_timer_timeout() -> void:
