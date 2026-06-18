@@ -2,6 +2,9 @@ extends CharacterBody2D
 
 
 @onready var player =$"../Player"
+@onready var sprite = $Character
+
+@export var separationStrength := 50.0
 
 var speed :float = 150
 var isMoving = true
@@ -17,7 +20,10 @@ var launchSpeed :float = 415
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	add_to_group("enemies")
-	pass
+	
+	# visual jitter to visually differentiate when clumped together
+	sprite.position += Vector2(randf_range(-4, 4), randf_range(-4, 4))
+	z_index = randi() % 3
 
 func _physics_process(delta):
 	if knockbackTime > 0:
@@ -37,6 +43,8 @@ func _physics_process(delta):
 	if isMoving:
 		var direction = global_position.direction_to(player.global_position)
 		global_position += direction * speed * delta
+		
+	move_and_slide()
 
 func applyKnockback(from_position: Vector2):
 	knockbackDir = (global_position - from_position).normalized()
