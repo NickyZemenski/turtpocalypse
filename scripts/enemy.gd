@@ -20,7 +20,7 @@ var launchSpeed :float = 415
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	add_to_group("enemies")
-	
+	player = get_tree().get_first_node_in_group("player")
 	# visual jitter to visually differentiate when clumped together
 	sprite.position += Vector2(randf_range(-8, 8), randf_range(-8, 8))
 	z_index = randi() % 3
@@ -41,6 +41,8 @@ func _physics_process(delta):
 		return
 		
 	if isMoving:
+		if player == null:
+			print("player is null")
 		var direction = global_position.direction_to(player.global_position)
 		global_position += direction * speed * delta
 		
@@ -75,3 +77,10 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	
 	if body.has_method("take_dmg"):
 		body.take_dmg(1)
+		
+	
+
+
+func _on_area_2d_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
+	if body.has_method("kill"):
+		queue_free()

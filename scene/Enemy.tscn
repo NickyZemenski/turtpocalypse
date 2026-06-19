@@ -19,3 +19,4 @@ texture = ExtResource("2_dregr")
 shape = SubResource("CircleShape2D_uramm")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_shape_entered" from="Area2D" to="." method="_on_area_2d_body_shape_entered"]

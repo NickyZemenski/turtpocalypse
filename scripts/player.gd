@@ -9,7 +9,7 @@ const SPEED = 300.0
 var hp = 3
 
 func _ready() -> void:
-	pass
+	add_to_group("player")
 
 func _physics_process(delta: float) -> void:
 	# Get the input direction and handle the movement/deceleration.

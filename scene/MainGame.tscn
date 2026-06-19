@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cp03stb5yawnt" path="res://scene/Enemy.tscn" id="3_ud66n"]
 [ext_resource type="Texture2D" uid="uid://dwvwvkitn8w43" path="res://assets/hud/health_full.png" id="4_6fdoo"]
 [ext_resource type="PackedScene" uid="uid://yc71le2vxud6" path="res://scene/Crosshair.tscn" id="5_2gnev"]
+[ext_resource type="Script" uid="uid://cu65s7v5k8h2m" path="res://scene/spawner.gd" id="6_kj2ki"]
 
 [node name="MainGame" type="Node2D" unique_id=1867307061]
 script = ExtResource("1_6fdoo")
@@ -13,9 +14,6 @@ script = ExtResource("1_6fdoo")
 position = Vector2(-132, -19)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=107941109]
-
-[node name="Enemy" parent="." unique_id=447794542 instance=ExtResource("3_ud66n")]
-position = Vector2(251, 21)
 
 [node name="Timer" type="Timer" parent="." unique_id=439100112]
 wait_time = 60.0
@@ -61,10 +59,14 @@ show_percentage = false
 [node name="XPLabel" type="Label" parent="HUD/VBoxContainer/HBoxContainer2" unique_id=1257739524]
 layout_mode = 2
 
-[node name="Enemy2" parent="." unique_id=117482738 instance=ExtResource("3_ud66n")]
-position = Vector2(216, 227)
+[node name="Spawner" type="Node2D" parent="." unique_id=735835339]
+position = Vector2(-129, -16)
+script = ExtResource("6_kj2ki")
+enemyScene = ExtResource("3_ud66n")
 
-[node name="Enemy3" parent="." unique_id=350881155 instance=ExtResource("3_ud66n")]
-position = Vector2(367, -135)
+[node name="enemy spawner" type="Timer" parent="Spawner" unique_id=36588670]
+wait_time = 3.0
+autostart = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Spawner/enemy spawner" to="Spawner" method="_on_enemy_spawner_timeout"]
